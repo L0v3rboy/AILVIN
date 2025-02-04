@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TaskScheduler {
+public class main {
     // Initialize an empty list to store tasks
     private static List<String> tasks = new ArrayList<>();
 
@@ -51,4 +51,3 @@ public class TaskScheduler {
         }
     }
 }
-
