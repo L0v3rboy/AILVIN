@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TaskScheduler {
     // Initialize an empty list to store tasks
@@ -21,9 +22,33 @@ public class TaskScheduler {
 
     // Main function
     public static void main(String[] args) {
-        System.out.println("Task Scheduler Started");
-        addTask("Task 1");
-        addTask("Task 2");
-        runScheduler();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("\nChoose an option:");
+            System.out.println("1. Add Task");
+            System.out.println("2. Run Scheduler");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter task description: ");
+                    String task = scanner.nextLine();
+                    addTask(task);
+                    break;
+                case 2:
+                    runScheduler();
+                    break;
+                case 3:
+                    System.out.println("Exiting Task Scheduler.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 }
+
